@@ -3,15 +3,20 @@
 class filmEdge
 {
 public:
+	// movie from
 	int fromID;
+	// movie to
 	int toID;
+	// score
 	float similarityScore;
 
+	// default constructor
 	filmEdge()
 	{
 		this->similarityScore = -1;
 	}
 
+	// constructor for 2 films and their score
 	filmEdge(int fromID, int toID, float similiarityScore)
 	{
 		this->fromID = fromID;
@@ -19,6 +24,7 @@ public:
 		similarityScore = similarityScore;
 	}
 
+	// <, >, and == operators
 	bool operator< (const filmEdge& other)
 	{
 		if (this->similarityScore < other.similarityScore) {
@@ -43,4 +49,3 @@ public:
 		return false;
 	}
 };
-
